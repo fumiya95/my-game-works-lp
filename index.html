@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>My Game Works｜中間発表用</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:#050816;
+      color:#eef2ff;
+    }
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:24px 16px 40px;
+    }
+    h1{
+      font-size:28px;
+      margin:0 0 4px;
+    }
+    h2{
+      font-size:20px;
+      margin:24px 0 6px;
+      border-left:4px solid #4f7dff;
+      padding-left:8px;
+    }
+    p{
+      margin:4px 0;
+      font-size:14px;
+    }
+    ul{
+      margin:4px 0 0 18px;
+      padding:0;
+      font-size:14px;
+    }
+    li{margin:3px 0;}
+    .tagline{
+      color:#9da9d8;
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .section{
+      padding-top:8px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      margin-top:14px;
+    }
+    .pill-row{
+      margin-top:6px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      font-size:12px;
+    }
+    .pill{
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.15);
+      color:#c7d2ff;
+    }
+    .note{
+      font-size:12px;
+      color:#9da9d8;
+      margin-top:4px;
+    }
+
+    /* 画像スライダー */
+    .slider-wrap{
+      margin-top:10px;
+    }
+    .slider{
+      position:relative;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.18);
+      background:#0b1024;
+      min-height:260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      cursor:pointer;
+    }
+    .slider img{
+      max-width:100%;
+      max-height:100%;
+      display:block;
+      border-radius:12px;
+    }
+    .slider-hint{
+      position:absolute;
+      bottom:8px;
+      right:10px;
+      font-size:11px;
+      color:#c7d2ff;
+      background:rgba(5,8,22,0.7);
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.15);
+    }
+    .slider-dots{
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      margin-top:6px;
+    }
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#43486b;
+    }
+    .dot.active{
+      background:#7ea2ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- タイトル -->
+    <h1>My Game Works</h1>
+    <p class="tagline">実際に遊んだゲームだけをまとめた、Webアプリ</p>
+
+    <!-- 1. 何を作っているか -->
+    <div class="section" id="overview">
+      <h2>1. 何を作っているか</h2>
+      <ul>
+        <li>自分が3年間でプレイしたPCゲームのレビューサイト</li>
+        <li>「おすすめ」と「おすすめしない」をはっきり分けて表示</li>
+        <li>カード型UIで、ゲームを探しやすくしたWebアプリ</li>
+      </ul>
+      <div class="pill-row">
+        <span class="pill">ゲームレビュー</span>
+        <span class="pill">Steam風UI</span>
+        <span class="pill">個人制作Webアプリ</span>
+      </div>
+    </div>
+
+    <!-- 2. 今できている機能 -->
+    <div class="section" id="current-feature">
+      <h2>2. 今できている機能</h2>
+      <ul>
+        <li>ログイン画面（簡単なユーザー名・パスワードでログイン）</li>
+        <li>2025年ランキングTOP3の表示</li>
+        <li>カード形式のゲーム一覧表示（タイトル・ジャンル・おすすめ表示）</li>
+        <li>「詳細」ボタンからレビュー本文と感想を表示</li>
+        <li>6つのジャンルに分類して絞り込み表示</li>
+        <li>ゲームごとにスクリーンショット画像を表示できるようにしている</li>
+      </ul>
+    </div>
+
+    <!-- 3. 画面イメージ（クリックで次に進むスライド） -->
+    <div class="section" id="screens">
+      <h2>3. 画面イメージ（クリックでスライド）</h2>
+      <div class="slider-wrap">
+        <div class="slider" id="slider">
+          <!-- ★ここに最初のスライド画像が表示されます -->
+          <img id="slide-image" src="" alt="画面イメージ">
+          <div class="slider-hint">クリックで次の画面へ</div>
+        </div>
+        <div class="slider-dots" id="slider-dots">
+          <!-- ● ● ● が自動で入ります -->
+        </div>
+      </div>
+      <p class="note">
+        発表では、このスライドをクリックしながら<br>
+        「トップ画面 → 一覧 → 詳細」の順に見せて説明できます。
+      </p>
+    </div>
+
+    <!-- 4. 作ろうと思ったきっかけ -->
+    <div class="section" id="reason">
+      <h2>4. 作ろうと思ったきっかけ</h2>
+      <ul>
+        <li>友達がゲーミングPCを買って「何のゲームを遊べばいいか分からない」と困っていた</li>
+        <li>自分も、そもそも「面白いゲームに出会うこと」が難しいと感じていた</li>
+        <li>Steamレビューは情報量は多いが、最初の1本を直感的に選びにくい</li>
+        <li>そこで、自分が実際に遊んだゲームだけを集めた「入り口になるサイト」を作ろうと思った</li>
+      </ul>
+    </div>
+
+    <!-- 5. 開発環境・使っている技術 -->
+    <div class="section" id="tech">
+      <h2>5. 開発環境・使っている技術</h2>
+      <ul>
+        <li>HTML / CSS / JavaScript（プレーンな構成）</li>
+        <li>VS Code（ローカル実行）</li>
+        <li>生成AI（ChatGPT）でUI案やコードのたたき台を相談しながら、自分で調整</li>
+      </ul>
+    </div>
+
+    <!-- 6. これから追加したい機能 -->
+    <div class="section" id="future">
+      <h2>6. これから追加したい機能</h2>
+      <ul>
+        <li>「おすすめのみ」を切り替えて表示できるフィルター機能</li>
+        <li>「参考になった」ボタン（いいねのような評価ボタン）</li>
+        <li>背景色を選べるテーマ変更機能（ダーク／少し明るめなど）</li>
+        <li>ゲームの定価値段表示</li>
+        <li>値段別に並び替え（安い順・高い順など）</li>
+      </ul>
+    </div>
+
+    <!-- 7. この作品で伝えたいこと -->
+    <div class="section" id="point">
+      <h2>7. この作品で伝えたいこと</h2>
+      <ul>
+        <li>友達の「何を遊べばいいか分からない」という悩みからスタートした作品であること</li>
+        <li>単なる日記ではなく、ゲーム探しの入口になる「自分専用のデータベース」を目指していること</li>
+        <li>授業で学んだWeb技術と生成AIを組み合わせて、自分なりの形にできたこと</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // ★ここにスライドさせたい画像ファイルを登録してください
+    const slides = [
+      { src: "images/login.png",    alt: "ログイン" },
+      { src: "images/main.png",   alt: "ゲーム一覧画面" },
+      { src: "images/game-list.png", alt: "カテゴリ" }
+    ];
+    // ↑ ファイル名だけ自分の環境に合わせて変更すればOK（3枚以上あっても増やして大丈夫）
+
+    const imgEl   = document.getElementById("slide-image");
+    const slider  = document.getElementById("slider");
+    const dotsBox = document.getElementById("slider-dots");
+    let current   = 0;
+
+    function renderDots(){
+      dotsBox.innerHTML = "";
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === current ? " active" : "");
+        dotsBox.appendChild(d);
+      });
+    }
+
+    function showSlide(index){
+      if(slides.length === 0) return;
+      current = (index + slides.length) % slides.length;
+      imgEl.src = slides[current].src;
+      imgEl.alt = slides[current].alt;
+      renderDots();
+    }
+
+    function nextSlide(){
+      showSlide(current + 1);
+    }
+
+    slider.addEventListener("click", nextSlide);
+
+    // 初期表示
+    showSlide(0);
+  </script>
+</body>
+</html>
