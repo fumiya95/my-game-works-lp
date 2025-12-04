@@ -1,176 +1,203 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
-  <title>My Game Works｜中間発表用</title>
+  <title>My Game Works｜完成発表用</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:#050816;
-      color:#eef2ff;
-    }
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:24px 16px 40px;
-    }
-    h1{
-      font-size:28px;
-      margin:0 0 4px;
-    }
-    h2{
-      font-size:20px;
-      margin:24px 0 6px;
-      border-left:4px solid #4f7dff;
-      padding-left:8px;
-    }
-    p{
-      margin:4px 0;
-      font-size:14px;
-    }
-    ul{
-      margin:4px 0 0 18px;
-      padding:0;
-      font-size:14px;
-    }
-    li{margin:3px 0;}
-    .tagline{
-      color:#9da9d8;
-      font-size:13px;
-      margin-bottom:12px;
-    }
-    .section{
-      padding-top:8px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      margin-top:14px;
-    }
-    .pill-row{
-      margin-top:6px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      font-size:12px;
-    }
-    .pill{
-      padding:2px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.15);
-      color:#c7d2ff;
-    }
-    .note{
-      font-size:12px;
-      color:#9da9d8;
-      margin-top:4px;
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #050816;
+      color: #eef2ff;
     }
 
-    /* 画像スライダー */
-    .slider-wrap{
-      margin-top:10px;
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
     }
-    .slider{
-      position:relative;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.18);
-      background:#0b1024;
-      min-height:260px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      cursor:pointer;
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 4px;
     }
-    .slider img{
-      max-width:100%;
-      max-height:100%;
-      display:block;
-      border-radius:12px;
+
+    h2 {
+      font-size: 20px;
+      margin: 24px 0 6px;
+      border-left: 4px solid #4f7dff;
+      padding-left: 8px;
     }
-    .slider-hint{
-      position:absolute;
-      bottom:8px;
-      right:10px;
-      font-size:11px;
-      color:#c7d2ff;
-      background:rgba(5,8,22,0.7);
-      padding:3px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.15);
+
+    p {
+      margin: 4px 0;
+      font-size: 14px;
     }
-    .slider-dots{
-      display:flex;
-      justify-content:center;
-      gap:6px;
-      margin-top:6px;
+
+    ul {
+      margin: 4px 0 0 18px;
+      padding: 0;
+      font-size: 14px;
     }
-    .dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#43486b;
+
+    li {
+      margin: 3px 0;
     }
-    .dot.active{
-      background:#7ea2ff;
+
+    .tagline {
+      color: #9da9d8;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .section {
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 14px;
+    }
+
+    .pill-row {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .pill {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #c7d2ff;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #9da9d8;
+      margin-top: 4px;
+    }
+
+    /* NEWバッジ */
+    .new {
+      display: inline-block;
+      font-size: 11px;
+      background: #ff3b3b;
+      color: #fff;
+      padding: 1px 6px;
+      border-radius: 999px;
+      margin-left: 6px;
+    }
+
+    /* 画像スライダー（共通） */
+    .slider-wrap {
+      margin-top: 10px;
+    }
+
+    .slider {
+      position: relative;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #0b1024;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .slider img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .slider-hint {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-size: 11px;
+      color: #c7d2ff;
+      background: rgba(5, 8, 22, 0.7);
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #43486b;
+    }
+
+    .dot.active {
+      background: #7ea2ff;
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <!-- タイトル -->
     <h1>My Game Works</h1>
-    <p class="tagline">実際に遊んだゲームだけをまとめた、Webアプリ</p>
+    <p class="tagline">実際に遊んだゲームレビューだけをまとめた ! Webアプリ</p>
 
-    <!-- 1. 何を作っているか -->
+    <!-- 1. 何を作っているか（中間発表と同じ内容） -->
     <div class="section" id="overview">
       <h2>1. 何を作っているか</h2>
       <ul>
-        <li>自分が3年間でプレイしたPCゲームのレビューサイト</li>
-        <li>「おすすめ」と「おすすめしない」をはっきり分けて表示</li>
-        <li>カード型UIで、ゲームを探しやすくしたWebアプリ</li>
+        <li>自分が3年間でプレイしたSteamのゲームのレビューサイト</li>
+        <li>プレイ評価を4段階に分けて表示</li>
+        <li>"カード型UI"で、ゲームを探しやすくしたWebアプリ</li>
       </ul>
       <div class="pill-row">
         <span class="pill">ゲームレビュー</span>
-        <span class="pill">Steam風UI</span>
         <span class="pill">個人制作Webアプリ</span>
       </div>
     </div>
 
-    <!-- 2. 今できている機能 -->
-    <div class="section" id="current-feature">
-      <h2>2. 今できている機能</h2>
+    <!-- 2. 完成した機能一覧（NEW付き） -->
+    <div class="section" id="features">
+      <h2>2. 完成した主な機能一覧</h2>
       <ul>
-        <li>ログイン画面（簡単なユーザー名・パスワードでログイン）</li>
-        <li>2025年ランキングTOP3の表示</li>
-        <li>カード形式のゲーム一覧表示（タイトル・ジャンル・おすすめ表示）</li>
-        <li>「詳細」ボタンからレビュー本文と感想を表示</li>
-        <li>6つのジャンルに分類して絞り込み表示</li>
-        <li>ゲームごとにスクリーンショット画像を表示できるようにしている</li>
+        <li>ログイン機能（1枚目）</li>
+        <li>2023〜2025 ランキング TOP3 のカルーセル表示(2枚目)</li>
+        <li>カード形式のゲーム一覧 + 価格表示（3枚目）</li>
+
+        <li>おすすめランクを 4 段階に分類(4枚目) <span class="new">NEW!</span></li>
+        <li>安い順/高い順のソート機能 (5枚目)<span class="new">NEW!</span></li>
+        <li>詳細ページ：レビュー本文・価格・ジャンル・Steam リンク表示(6枚目)</li>
+        <li>「参考になった」ボタン（6枚目） <span class="new">NEW!</span></li>
+        <li>プレイ画像のギャラリー＋クリックで拡大表示(6,7枚目) <span class="new">NEW!</span></li>
+        <li>6分類によるジャンルカテゴリ(8枚目) </li>
       </ul>
     </div>
 
-    <!-- 3. 画面イメージ（クリックで次に進むスライド） -->
+    <!-- 3. 画面イメージ（クリックでスライド） -->
     <div class="section" id="screens">
-      <h2>3. 画面イメージ（クリックでスライド）</h2>
       <div class="slider-wrap">
         <div class="slider" id="slider">
-          <!-- ★ここに最初のスライド画像が表示されます -->
           <img id="slide-image" src="" alt="画面イメージ">
           <div class="slider-hint">クリックで次の画面へ</div>
         </div>
-        <div class="slider-dots" id="slider-dots">
-          <!-- ● ● ● が自動で入ります -->
-        </div>
+        <div class="slider-dots" id="slider-dots"></div>
       </div>
-      <p class="note">
-        発表では、このスライドをクリックしながら<br>
-        「トップ画面 → 一覧 → 詳細」の順に見せて説明できます。
-      </p>
     </div>
 
     <!-- 4. 作ろうと思ったきっかけ -->
     <div class="section" id="reason">
-      <h2>4. 作ろうと思ったきっかけ</h2>
+      <h2>3. 作ろうと思ったきっかけ</h2>
       <ul>
         <li>友達がゲーミングPCを買って「何のゲームを遊べばいいか分からない」と困っていた</li>
         <li>自分も、そもそも「面白いゲームに出会うこと」が難しいと感じていた</li>
@@ -179,54 +206,78 @@
       </ul>
     </div>
 
-    <!-- 5. 開発環境・使っている技術 -->
-    <div class="section" id="tech">
-      <h2>5. 開発環境・使っている技術</h2>
-      <ul>
-        <li>HTML / CSS / JavaScript（プレーンな構成）</li>
-        <li>VS Code（ローカル実行）</li>
-        <li>生成AI（ChatGPT）でUI案やコードのたたき台を相談しながら、自分で調整</li>
-      </ul>
-    </div>
-
-    <!-- 6. これから追加したい機能 -->
-    <div class="section" id="future">
-      <h2>6. これから追加したい機能</h2>
-      <ul>
-        <li>「おすすめのみ」を切り替えて表示できるフィルター機能</li>
-        <li>「参考になった」ボタン（いいねのような評価ボタン）</li>
-        <li>背景色を選べるテーマ変更機能（ダーク／少し明るめなど）</li>
-        <li>ゲームの定価値段表示</li>
-        <li>値段別に並び替え（安い順・高い順など）</li>
-      </ul>
-    </div>
-
-    <!-- 7. この作品で伝えたいこと -->
+    <!-- 5. この作品で伝えたいこと -->
     <div class="section" id="point">
-      <h2>7. この作品で伝えたいこと</h2>
+      <h2>4. この作品で伝えたいこと</h2>
       <ul>
         <li>友達の「何を遊べばいいか分からない」という悩みからスタートした作品であること</li>
         <li>単なる日記ではなく、ゲーム探しの入口になる「自分専用のデータベース」を目指していること</li>
-        <li>授業で学んだWeb技術と生成AIを組み合わせて、自分なりの形にできたこと</li>
+        <li>授業で学んだ 簡単なHTML技術と生成AIを組み合わせて、自分なりの形にできるということ</li>
+      </ul>
+    </div>
+
+    <!-- 6. 苦労したところ -->
+    <div class="section" id="hard">
+      <h2>5. 苦労したところ</h2>
+      <ul>
+        <li>詳細ボタンやおすすめボタンを適切な位置への配置</li>
+        <li>プレイ画像を見やすく表示させる</li>
+        <li>たくさんのゲームのプレイ画像や実際にプレイしたレビューを用意すること。</li>
+      </ul>
+    </div>
+
+    <!-- 7. 作品の雰囲気が分かる写真（2枚スライド） -->
+    <div class="section" id="extra-photos">
+      <div class="slider-wrap">
+        <div class="slider" id="slider2">
+          <img id="slide-image2" src="" alt="追加写真">
+          <div class="slider-hint">クリックで次の写真へ</div>
+        </div>
+        <div class="slider-dots" id="slider-dots2"></div>
+      </div>
+    </div>
+
+    <!-- 8. 今後の展望（マネタイズの可能性） -->
+    <div class="section" id="future">
+      <h2>6. 今後の展望</h2>
+      <ul>
+        <li>Steam ストアへのアフィリエイトリンクを追加し、<br>　自分のレビュー経由で購入されたゲームの紹介料を得る。</li>
+        <li>「おすすめゲーム診断フォーム」を作成し、<br>　個別診断結果ページに広告枠やスポンサー枠を設置する。</li>
+        <li>ゲーム会社向けに、<br>「プレイレビュー＋スクリーンショット作成」をセットにした有料レビューサービスとして展開する。</li>
+      </ul>
+    </div>
+
+    <!-- 9. 開発環境・使っている技術 -->
+    <div class="section" id="tech">
+      <h2>7. 開発環境・使っている技術</h2>
+      <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>VS Code</li>
+        <li>生成AI（ChatGPT5.1）</li>
       </ul>
     </div>
   </div>
 
   <script>
-    // ★ここにスライドさせたい画像ファイルを登録してください
+    // ★ここにスライドさせたい「画面イメージ」画像ファイルを登録してください（最大8枚まで想定）
     const slides = [
-      { src: "images/login.png",    alt: "ログイン" },
-      { src: "images/main.png",   alt: "ゲーム一覧画面" },
-      { src: "images/game-list.png", alt: "カテゴリ" }
+      { src: "images/main01.png", alt: "ログイン画面" },
+      { src: "images/main02.png", alt: "ランキングTOP3カルーセル" },
+      { src: "images/main03.png", alt: "カードUI" },
+      { src: "images/main04.png", alt: "ゲーム詳細ページ" },
+      { src: "images/main05.png", alt: "プレイ画像モーダル表示（NEW機能）" },
+      { src: "images/main06.png", alt: "参考になったボタン（NEW機能）" },
+      { src: "images/main07.png", alt: "6分類ジャンルカテゴリ画面" },
+      { src: "images/main08.png", alt: "スマホ表示イメージ" }
     ];
-    // ↑ ファイル名だけ自分の環境に合わせて変更すればOK（3枚以上あっても増やして大丈夫）
+    // ↑ 不要なものは削除してOK。最大 8 枚までこのまま増やしても動きます。
 
-    const imgEl   = document.getElementById("slide-image");
-    const slider  = document.getElementById("slider");
+    const imgEl = document.getElementById("slide-image");
+    const slider = document.getElementById("slider");
     const dotsBox = document.getElementById("slider-dots");
-    let current   = 0;
+    let current = 0;
 
-    function renderDots(){
+    function renderDots() {
       dotsBox.innerHTML = "";
       slides.forEach((_, i) => {
         const d = document.createElement("div");
@@ -235,22 +286,59 @@
       });
     }
 
-    function showSlide(index){
-      if(slides.length === 0) return;
+    function showSlide(index) {
+      if (slides.length === 0) return;
       current = (index + slides.length) % slides.length;
       imgEl.src = slides[current].src;
       imgEl.alt = slides[current].alt;
       renderDots();
     }
 
-    function nextSlide(){
+    function nextSlide() {
       showSlide(current + 1);
     }
 
     slider.addEventListener("click", nextSlide);
 
+    // ★2枚スライド用の写真（6と7の間のセクション）
+    const slides2 = [
+      { src: "images/sub01.png", alt: "プレイ中の様子1" },
+      { src: "images/sub02.png", alt: "プレイ中の様子2" }
+    ];
+    // ↑ ここに 2 枚分の画像ファイル名を入れてください
+
+    const imgEl2 = document.getElementById("slide-image2");
+    const slider2 = document.getElementById("slider2");
+    const dotsBox2 = document.getElementById("slider-dots2");
+    let current2 = 0;
+
+    function renderDots2() {
+      dotsBox2.innerHTML = "";
+      slides2.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === current2 ? " active" : "");
+        dotsBox2.appendChild(d);
+      });
+    }
+
+    function showSlide2(index) {
+      if (slides2.length === 0) return;
+      current2 = (index + slides2.length) % slides2.length;
+      imgEl2.src = slides2[current2].src;
+      imgEl2.alt = slides2[current2].alt;
+      renderDots2();
+    }
+
+    function nextSlide2() {
+      showSlide2(current2 + 1);
+    }
+
+    slider2.addEventListener("click", nextSlide2);
+
     // 初期表示
     showSlide(0);
+    showSlide2(0);
   </script>
 </body>
+
 </html>
